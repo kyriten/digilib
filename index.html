@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Style CSS -->
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: monospace;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        display: flex;
+        width: 80%;
+        padding: 2rem 4rem;
+        margin-inline: auto;
+      }
+
+      .content {
+        flex: 3;
+        width: 80%;
+        padding: 20px;
+      }
+
+      .content-list {
+        flex: 1;
+        padding: 20px;
+      }
+
+      aside.socmed-column {
+        position: fixed;
+        inset-block: 0;
+        inset-inline-end: 0;
+        top: 30%;
+        right: 10%;
+      }
+
+      .social-media {
+        list-style-type: none;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .social-media li {
+        box-shadow: rgba(0, 0, 0, 0.5);
+      }
+
+      .social-media li a i {
+        background-color: #ddd;
+        color: #f14b3c;
+        padding: 12px;
+        border-radius: 50%;
+        width: 100%;
+        margin: 5px 0 5px 0;
+      }
+
+      .social-media li a i:hover {
+        background-color: #bdbdbd;
+      }
+      .vl {
+        border-left: 2px solid #ddd;
+        text-align: center;
+        left: 50%;
+        height: 25px;
+      }
+      /* Modify Top Navigation */
+      header {
+        background-image: linear-gradient(260deg, #deaf52 0%, #f14b3c 100%);
+      }
+      header.navbar {
+        max-width: 100%;
+        font-size: 19px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 999;
+      }
+
+      .nav-menu {
+        list-style-type: none;
+        display: none;
+      }
+
+      .nav-links {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .nav-links .fa {
+        margin-right: 5px;
+      }
+
+      .nav-menu li {
+        text-align: center;
+        margin: 15px auto;
+      }
+
+      .logo img {
+        width: 35px;
+        user-select: none;
+      }
+
+      .navbar-toggle {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 24px;
+      }
+
+      figure img {
+        width: 100%;
+      }
+
+      .expand {
+        display: block;
+        padding: 0;
+        margin: 0;
+      }
+
+      .navbar-wrapper {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      @media screen and (max-width: 768px) {
+        .nav-links .fa {
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .navbar {
+          font-size: 19px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          z-index: 500;
+        }
+
+        .nav-menu {
+          display: block;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .nav-menu li {
+          display: inline;
+          padding-left: 35px;
+        }
+
+        .logo img {
+          width: 55px;
+          user-select: none;
+        }
+
+        .navbar-toggle {
+          display: none;
+        }
+
+        .nav-links:hover {
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <!-- Left as Logo -->
+        <img
+          src="img/favicon.png"
+          alt="logo"
+          onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false"
+        />
+      </div>
+      <nav class="navbar-wrapper">
+        <!-- Right as Navbar Menu -->
+        <ul class="nav-menu" id="js-menu">
+          <li>
+            <a href="#home" class="active nav-links"
+              ><i class="fa fa-home"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="nav-links"
+              ><i class="fa fa-info-circle"></i>About</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-links"
+              ><i class="fa fa-envelope"></i>Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Toggle -->
+        <span class="navbar-toggle" id="js-navbar-toggle">
+          <i class="fa fa-bars"></i>
+        </span>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="content">
+        <article style="text-align: center">
+          <img src="img/pelican.jpg" alt="gambar" width="25%" />
+          <h1>Pelican</h1>
+          <p style="text-align: justify">
+            Pelicans (genus Pelecanus) are a genus of large water birds that
+            make up the family Pelecanidae. They are characterized by a long
+            beak and a large throat pouch used for catching prey and draining
+            water from the scooped-up contents before swallowing. They have
+            predominantly pale plumage, except for the brown and Peruvian
+            pelicans. The bills, pouches, and bare facial skin of all pelicans
+            become brightly coloured before the breeding season.
+          </p>
+        </article>
+        <article style="text-align: center">
+          <img src="img/history.jpg" alt="gambar" width="25%" />
+          <h1>History</h1>
+          <p style="text-align: justify">
+            History (derived from Ancient Greek ἱστορία (historía) 'inquiry;
+            knowledge acquired by investigation') is the systematic study and
+            documentation of the human past. The period of events before the
+            invention of writing systems is considered prehistory. "History" is
+            an umbrella term comprising past events as well as the memory,
+            discovery, collection, organization, presentation, and
+            interpretation of these events. Historians seek knowledge of the
+            past using historical sources such as written documents, oral
+            accounts, art and material artifacts, and ecological markers.
+            History is incomplete and still has debatable mysteries. History is
+            an academic discipline which uses a narrative to describe, examine,
+            question, and analyze past events, and investigate their patterns of
+            cause and effect. Historians debate which narrative best explains an
+            event, as well as the significance of different causes and effects.
+            Historians debate the nature of history as an end in itself, and its
+            usefulness in giving perspective on the problems of the present.
+          </p>
+        </article>
+        <h3><i class="fa fa-hashtag" aria-hidden="true"></i> TAG</h3>
+        <p>#pelikan #history #bird #study #knowledges</p>
+      </div>
+      <aside class="content-list">
+        <h1>Content List:</h1>
+        <ol>
+          <li>
+            <article>
+              <h1>Intermezzzo Tag Baju</h1>
+              <img src="img/tag-baju.jpg" alt="gambar-baju" width="50%" />
+            </article>
+          </li>
+        </ol>
+      </aside>
+      <aside class="socmed-column">
+        <ul class="social-media">
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <div class="vl"></div>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <div class="vl"></div>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer
+      style="
+        text-align: center;
+        padding: 25px;
+        background-color: #333;
+        color: #ddd;
+      "
+    >
+      &copy; 2023, My Website
+    </footer>
+    <script>
+      let nav = document.getElementById("js-menu");
+      let navToggle = document.getElementById("js-navbar-toggle");
+
+      navToggle.addEventListener("click", function () {
+        nav.classList.toggle("expand");
+      });
+    </script>
+  </body>
+</html>
