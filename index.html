@@ -143,7 +143,7 @@
         align-items: center;
         width: 100%;
         z-index: 500;
-        background-color: #3ca0f1;
+        background-color: rgba(14, 106, 167);
       }
 
       .mobile-links .fa {
@@ -151,10 +151,6 @@
       }
 
       /* Main */
-      figure img {
-        width: 100%;
-      }
-
       aside.socmed-column {
         position: fixed;
         inset-block: 0;
@@ -196,9 +192,15 @@
         height: 25px;
       }
 
+      img {
+          border-radius: 10px;
+        }
+
       article.post-with-desc {
         display: flex;
         padding-bottom: 20px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
       }
 
       .post {
@@ -251,11 +253,18 @@
         }
 
         .post-with-desc img {
-          display: none;
+          width: 50%;
         }
 
         article.post-with-desc {
-          padding: 0px;
+          margin-top: 32px;
+          display: block;
+          padding: 10px;
+        }
+
+        img.post-thumbnail {
+          margin: auto;
+          display: block;
         }
 
         .post {
@@ -267,7 +276,7 @@
           margin-top: 58px;
           position: relative;
           bottom: 58px;
-          background: #111;
+          background: #333;
           color: #fff;
           width: 100%;
         }
@@ -387,7 +396,11 @@
       <div class="content">
         <!-- Post 1 -->
         <article class="post-with-desc">
-          <img src="img/pelican.jpg" alt="gambar" width="25%" />
+          <img
+            class="post-thumbnail"
+            src="img/pelican.jpg"
+            alt="gambar"
+            width="25%" />
           <div class="post">
             <!-- Post Title -->
             <h1 class="post-title">Pelican</h1>
@@ -412,7 +425,11 @@
 
         <!-- Post 2 -->
         <article class="post-with-desc">
-          <img src="img/history.jpg" alt="gambar" width="25%" />
+          <img
+            class="post-thumbnail"
+            src="img/history.jpg"
+            alt="gambar"
+            width="25%" />
           <div class="post">
             <!-- Post Title -->
             <h1 class="post-title">History</h1>
