@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <title>Kyriten - Digilib</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <!-- Load an icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- Style CSS -->
@@ -34,6 +37,7 @@
       .content {
         flex: 3;
         width: 80%;
+        height: 100vh;
         padding: 20px;
       }
 
@@ -42,49 +46,17 @@
         padding: 20px;
       }
 
-      aside.socmed-column {
-        position: fixed;
-        inset-block: 0;
-        inset-inline-end: 0;
-        top: 30%;
-        right: 10%;
+      /* Logo */
+      .logo img {
+        width: 35px;
+        user-select: none;
       }
 
-      .social-media {
-        list-style-type: none;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-      }
-
-      .social-media li {
-        box-shadow: rgba(0, 0, 0, 0.5);
-      }
-
-      .social-media li a i {
-        background-color: #ddd;
-        color: #f14b3c;
-        padding: 12px;
-        border-radius: 50%;
-        width: 100%;
-        margin: 5px 0 5px 0;
-      }
-
-      .social-media li a i:hover {
-        background-color: #bdbdbd;
-      }
-      .vl {
-        border-left: 2px solid #ddd;
-        text-align: center;
-        left: 50%;
-        height: 25px;
-      }
-      /* Modify Top Navigation */
+      /* Web Nav */
       header {
-        background-image: linear-gradient(260deg, #deaf52 0%, #f14b3c 100%);
+        background-color: #f8f8f8f1;
       }
+
       header.navbar {
         position: sticky;
         top: 0;
@@ -95,6 +67,7 @@
         justify-content: center;
         align-items: center;
         z-index: 500;
+        padding: 5px 0px;
       }
 
       .nav-menu {
@@ -104,7 +77,7 @@
 
       .nav-links {
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(14, 106, 167, 0.7);
       }
 
       .nav-links .fa {
@@ -116,25 +89,7 @@
         margin: 15px auto;
       }
 
-      .logo img {
-        width: 35px;
-        user-select: none;
-      }
-
-      figure img {
-        width: 100%;
-      }
-
-      footer {
-        position: relative;
-        width: 100%;
-        text-align: center;
-        padding: 25px;
-        background-color: #333;
-        color: #ddd;
-      }
-
-      /* Mobile Menu */
+      /* Mobile Nav */
       .mobile-menu {
         display: flex;
         list-style-type: none;
@@ -195,18 +150,100 @@
         margin-right: 5px;
       }
 
+      /* Main */
+      figure img {
+        width: 100%;
+      }
+
+      aside.socmed-column {
+        position: fixed;
+        inset-block: 0;
+        inset-inline-end: 0;
+        top: 30%;
+        right: 10%;
+      }
+
+      .social-media {
+        list-style-type: none;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .social-media li {
+        box-shadow: rgba(0, 0, 0, 0.5);
+      }
+
+      .social-media li a i {
+        background-color: #ddd;
+        color: #f14b3c;
+        padding: 12px;
+        border-radius: 50%;
+        width: 100%;
+        margin: 5px 0 5px 0;
+      }
+
+      .social-media li a i:hover {
+        background-color: #bdbdbd;
+      }
+
+      .vl {
+        border-left: 2px solid #ddd;
+        text-align: center;
+        left: 50%;
+        height: 25px;
+      }
+
+      article.post-with-desc {
+        display: flex;
+        padding-bottom: 20px;
+      }
+
+      .post {
+        margin-left: 25px;
+        padding-left: 20px;
+      }
+
+      .post-title {
+        font-size: 32px;
+      }
+
+      .tag {
+        background-color: #ddd;
+        color: #333;
+        font-size: 12px;
+        border-radius: 15px;
+        padding: 5px 10px;
+      }
+
+      /* Footer */
+      footer {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        padding: 25px;
+        background-color: #333;
+        color: #ddd;
+      }
+
       @media screen and (max-width: 768px) {
         .nav-links .fa {
-          display: none;
-        }
-
-        aside.socmed-column {
           display: none;
         }
 
         .content {
           width: 100%;
           padding: 0px;
+        }
+
+        .social-media {
+          display: none;
+        }
+
+        .post-with-desc img {
+          display: none;
         }
       }
 
@@ -243,20 +280,29 @@
         }
 
         .nav-links:hover {
-          color: rgba(255, 255, 255, 1);
+          background-color: #3ca0f1;
+          border-radius: 15px;
+          color: rgb(238, 238, 238);
+          padding: 5px 10px;
+        }
+
+        nav.navbar-mobile {
+          display: none;
         }
       }
     </style>
   </head>
   <body>
     <header class="navbar">
+      <!-- Logo -->
       <div class="logo">
-        <!-- Left as Logo -->
         <img
-          src="img/favicon.png"
+          src="img/logo.png"
           alt="logo"
           onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false" />
       </div>
+
+      <!-- Web -->
       <nav>
         <!-- Right as Navbar Menu -->
         <ul class="nav-menu" id="js-menu">
@@ -282,70 +328,97 @@
           <i class="fa fa-bars"></i>
         </span> -->
       </nav>
+
+      <!-- Mobile -->
+      <nav class="navbar-mobile">
+        <!-- Right as Navbar Menu -->
+        <ul class="mobile-menu">
+          <li>
+            <a href="#home" class="active mobile-links"
+              ><i data-feather="home"></i><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="#about" class="mobile-links"
+              ><i data-feather="info"></i><span>About</span></a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="mobile-links"
+              ><i data-feather="send"></i><span>Contact</span></a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Mobile -->
-    <nav class="navbar-mobile">
-      <!-- Right as Navbar Menu -->
-      <ul class="mobile-menu">
-        <li>
-          <a href="#home" class="active mobile-links"
-            ><i data-feather="home"></i><span>Home</span></a
-          >
-        </li>
-        <li>
-          <a href="#about" class="mobile-links"
-            ><i data-feather="info"></i><span>About</span></a
-          >
-        </li>
-        <li>
-          <a href="#contact" class="mobile-links"
-            ><i data-feather="send"></i><span>Contact</span></a
-          >
-        </li>
-      </ul>
-    </nav>
-
     <main class="container">
+      <!-- Content -->
       <div class="content">
-        <article style="text-align: center">
+        <!-- Post 1 -->
+        <article class="post-with-desc">
           <img src="img/pelican.jpg" alt="gambar" width="25%" />
-          <h1>Pelican</h1>
-          <p style="text-align: justify">
-            Pelicans (genus Pelecanus) are a genus of large water birds that
-            make up the family Pelecanidae. They are characterized by a long
-            beak and a large throat pouch used for catching prey and draining
-            water from the scooped-up contents before swallowing. They have
-            predominantly pale plumage, except for the brown and Peruvian
-            pelicans. The bills, pouches, and bare facial skin of all pelicans
-            become brightly coloured before the breeding season.
-          </p>
+          <div class="post">
+            <!-- Post Title -->
+            <h1 class="post-title">Pelican</h1>
+
+            <!-- Post Description -->
+            <p style="text-align: justify">
+              Pelicans (genus Pelecanus) are a genus of large water birds that
+              make up the family Pelecanidae. They are characterized by a long
+              beak and a large throat pouch used for catching prey and draining
+              water from the scooped-up contents before swallowing. They have
+              predominantly pale plumage, except for the brown and Peruvian
+              pelicans. The bills, pouches, and bare facial skin of all pelicans
+              become brightly coloured before the breeding season.
+            </p>
+
+            <!-- Post Tag -->
+            <span class="tag">#pelican</span>
+            <span class="tag">#bird</span>
+            <span class="tag">#aboutpelican</span>
+          </div>
         </article>
-        <article style="text-align: center">
+
+        <!-- Post 2 -->
+        <article class="post-with-desc">
           <img src="img/history.jpg" alt="gambar" width="25%" />
-          <h1>History</h1>
-          <p style="text-align: justify">
-            History (derived from Ancient Greek ἱστορία (historía) 'inquiry;
-            knowledge acquired by investigation') is the systematic study and
-            documentation of the human past. The period of events before the
-            invention of writing systems is considered prehistory. "History" is
-            an umbrella term comprising past events as well as the memory,
-            discovery, collection, organization, presentation, and
-            interpretation of these events. Historians seek knowledge of the
-            past using historical sources such as written documents, oral
-            accounts, art and material artifacts, and ecological markers.
-            History is incomplete and still has debatable mysteries. History is
-            an academic discipline which uses a narrative to describe, examine,
-            question, and analyze past events, and investigate their patterns of
-            cause and effect. Historians debate which narrative best explains an
-            event, as well as the significance of different causes and effects.
-            Historians debate the nature of history as an end in itself, and its
-            usefulness in giving perspective on the problems of the present.
-          </p>
+          <div class="post">
+            <!-- Post Title -->
+            <h1 class="post-title">History</h1>
+
+            <!-- Post Description -->
+            <p style="text-align: justify">
+              History (derived from Ancient Greek ἱστορία (historía) 'inquiry;
+              knowledge acquired by investigation') is the systematic study and
+              documentation of the human past. The period of events before the
+              invention of writing systems is considered prehistory. "History"
+              is an umbrella term comprising past events as well as the memory,
+              discovery, collection, organization, presentation, and
+              interpretation of these events. Historians seek knowledge of the
+              past using historical sources such as written documents, oral
+              accounts, art and material artifacts, and ecological markers.
+              History is incomplete and still has debatable mysteries. History
+              is an academic discipline which uses a narrative to describe,
+              examine, question, and analyze past events, and investigate their
+              patterns of cause and effect. Historians debate which narrative
+              best explains an event, as well as the significance of different
+              causes and effects. Historians debate the nature of history as an
+              end in itself, and its usefulness in giving perspective on the
+              problems of the present.
+            </p>
+
+            <!-- Post Tag -->
+            <span class="tag">#history</span>
+            <span class="tag">#human</span>
+            <span class="tag">#prehistory</span>
+          </div>
         </article>
         <h3><i class="fa fa-hashtag" aria-hidden="true"></i> TAG</h3>
         <p>#pelikan #history #bird #study #knowledges</p>
       </div>
+
+      <!-- Content List -->
       <aside class="content-list">
         <h1>Content List:</h1>
         <ol>
@@ -360,21 +433,29 @@
       <aside class="socmed-column">
         <ul class="social-media">
           <li>
-            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.instagram.com/ossastra/" target="_blank"
+              ><i class="fa fa-instagram"></i
+            ></a>
           </li>
           <div class="vl"></div>
           <li>
-            <a href="#"><i class="fa fa-whatsapp"></i></a>
+            <a href="https://github.com/kyriten" target="_blank"
+              ><i class="fa fa-github"></i
+            ></a>
           </li>
           <div class="vl"></div>
           <li>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a
+              href="https://www.linkedin.com/in/abimanyu-okysaputra/"
+              target="_blank"
+              ><i class="fa fa-linkedin"></i
+            ></a>
           </li>
         </ul>
       </aside>
     </main>
 
-    <footer>&copy; 2023, Digilib</footer>
+    <footer>&copy; 2023, Digilib by Kyriten</footer>
     <!-- <script>
       let nav = document.getElementById("js-menu");
       let navToggle = document.getElementById("js-navbar-toggle");
