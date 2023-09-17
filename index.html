@@ -7,10 +7,7 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- Style CSS -->
     <style>
@@ -28,9 +25,9 @@
       }
 
       .container {
-        display: flex;
-        width: 80%;
-        padding: 2rem 4rem;
+        display: block;
+        width: 90%;
+        padding: 2rem;
         margin-inline: auto;
       }
 
@@ -89,12 +86,15 @@
         background-image: linear-gradient(260deg, #deaf52 0%, #f14b3c 100%);
       }
       header.navbar {
+        position: sticky;
+        top: 0;
+        left: 0;
         max-width: 100%;
         font-size: 19px;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        z-index: 999;
+        z-index: 500;
       }
 
       .nav-menu {
@@ -121,35 +121,103 @@
         user-select: none;
       }
 
-      .navbar-toggle {
-        cursor: pointer;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 24px;
-      }
-
       figure img {
         width: 100%;
       }
 
-      .expand {
-        display: block;
-        padding: 0;
-        margin: 0;
+      footer {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        padding: 25px;
+        background-color: #333;
+        color: #ddd;
       }
 
-      .navbar-wrapper {
+      /* Mobile Menu */
+      .mobile-menu {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .mobile-links {
+        text-decoration: none;
+        display: flex;
+        padding: 0px 16px;
+        color: rgba(255, 255, 255, 0.7);
+        border-radius: 50px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+
+      .mobile-links span {
+        width: 0;
+        overflow: hidden;
+      }
+
+      .mobile-menu li {
+        display: block;
+        align-items: center;
+        text-align: center;
+      }
+
+      .mobile-links:focus {
+        text-decoration: none;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.2);
+        transition: 0.2s;
+      }
+
+      .mobile-links:focus span {
+        width: 100%;
+        margin-left: 8px;
+        transition: 0.2s;
+      }
+
+      *:focus {
+        outline: none;
+        border: none;
+      }
+
+      .navbar-mobile {
+        position: fixed;
+        bottom: 0;
+        font-size: 19px;
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        z-index: 500;
+        background-color: #3ca0f1;
+      }
+
+      .mobile-links .fa {
+        margin-right: 5px;
       }
 
       @media screen and (max-width: 768px) {
         .nav-links .fa {
           display: none;
         }
+
+        aside.socmed-column {
+          display: none;
+        }
+
+        .content {
+          width: 100%;
+          padding: 0px;
+        }
       }
 
       @media screen and (min-width: 768px) {
-        .navbar {
+        .container {
+          display: flex;
+          width: 80%;
+          padding: 2rem 4rem;
+          margin-inline: auto;
+        }
+        header.navbar {
           font-size: 19px;
           display: flex;
           justify-content: space-around;
@@ -174,10 +242,6 @@
           user-select: none;
         }
 
-        .navbar-toggle {
-          display: none;
-        }
-
         .nav-links:hover {
           color: rgba(255, 255, 255, 1);
         }
@@ -191,10 +255,9 @@
         <img
           src="img/favicon.png"
           alt="logo"
-          onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false"
-        />
+          onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false" />
       </div>
-      <nav class="navbar-wrapper">
+      <nav>
         <!-- Right as Navbar Menu -->
         <ul class="nav-menu" id="js-menu">
           <li>
@@ -215,11 +278,33 @@
         </ul>
 
         <!-- Toggle -->
-        <span class="navbar-toggle" id="js-navbar-toggle">
+        <!-- <span class="navbar-toggle" id="js-navbar-toggle">
           <i class="fa fa-bars"></i>
-        </span>
+        </span> -->
       </nav>
     </header>
+
+    <!-- Mobile -->
+    <nav class="navbar-mobile">
+      <!-- Right as Navbar Menu -->
+      <ul class="mobile-menu">
+        <li>
+          <a href="#home" class="active mobile-links"
+            ><i data-feather="home"></i><span>Home</span></a
+          >
+        </li>
+        <li>
+          <a href="#about" class="mobile-links"
+            ><i data-feather="info"></i><span>About</span></a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="mobile-links"
+            ><i data-feather="send"></i><span>Contact</span></a
+          >
+        </li>
+      </ul>
+    </nav>
 
     <main class="container">
       <div class="content">
@@ -289,23 +374,20 @@
       </aside>
     </main>
 
-    <footer
-      style="
-        text-align: center;
-        padding: 25px;
-        background-color: #333;
-        color: #ddd;
-      "
-    >
-      &copy; 2023, My Website
-    </footer>
-    <script>
+    <footer>&copy; 2023, Digilib</footer>
+    <!-- <script>
       let nav = document.getElementById("js-menu");
       let navToggle = document.getElementById("js-navbar-toggle");
 
       navToggle.addEventListener("click", function () {
         nav.classList.toggle("expand");
       });
+    </script> -->
+
+    <script>
+      feather.replace();
+
+      document.querySelector(".nav-item").focus();
     </script>
   </body>
 </html>
