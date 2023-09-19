@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kyriten - Digilib</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!-- Load an icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <img
+          src="img/logo.png"
+          alt="logo"
+          onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false" />
+      </div>
+
+      <!-- Web -->
+      <nav>
+        <!-- Right as Navbar Menu -->
+        <ul class="nav-menu" id="js-menu">
+          <li>
+            <a href="index.html" class="active nav-links"
+              ><i class="fa-solid fa-at"></i>Threads</a
+            >
+          </li>
+          <li>
+            <a href="book-loan.html" class="nav-links"
+              ><i class="fa-solid fa-book"></i>Library</a
+            >
+          </li>
+        </ul>
+
+        <!-- Toggle -->
+        <!-- <span class="navbar-toggle" id="js-navbar-toggle">
+          <i class="fa fa-bars"></i>
+        </span> -->
+      </nav>
+    </header>
+    <!-- Mobile -->
+    <nav class="navbar-mobile">
+      <!-- Right as Navbar Menu -->
+      <ul class="mobile-menu">
+        <li>
+          <a href="index.html" class="active mobile-links"
+            ><i data-feather="at-sign"></i><span>Threads</span></a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="mobile-links"
+            ><i data-feather="info"></i><span>About</span></a
+          >
+        </li>
+        <li>
+          <a href="book-loan.html" class="mobile-links"
+            ><i data-feather="book"></i><span>loan</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <!-- Content -->
+      <div class="content">
+        <!-- Book -->
+        <!-- Add Book -->
+        <div class="card w-100 mr-2 mb-4">
+          <div class="card-title">Add Book</div>
+
+          <!-- Form Add Book -->
+          <div class="card-body">
+            <form action="" id="form">
+              <label for="title">Title</label><br />
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Title" /><br />
+              <div class="row">
+                <div class="column mr-1">
+                  <label for="author">Author</label><br />
+                  <input
+                    type="text"
+                    id="author"
+                    name="author"
+                    placeholder="Kyriten" /><br />
+                </div>
+                <div class="column ml-1">
+                  <label for="year">Year</label><br />
+                  <input
+                    type="number"
+                    placeholder="YYYY"
+                    min="1990"
+                    max="2023"
+                    id="year"
+                    name="year" /><br />
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="card-footer flex flex-end">
+                <input class="btn btn-primary" type="submit" value="SAVE" />
+              </div>
+            </form>
+
+            <h3 id="messageAfterSubmit"></h3>
+          </div>
+        </div>
+        <div class="flex">
+          <!-- Unread Book -->
+          <div class="card w-100 mt-4 ml-2">
+            <div class="card-title">Unread Book</div>
+            <div class="card-body">
+              <div class="list-item" id="unreadBook"></div>
+            </div>
+          </div>
+          <!-- Book Has Been Read -->
+          <div class="card w-100 mt-4 ml-2">
+            <div class="card-title">Book Has Been Read</div>
+
+            <div class="card-body">
+              <div class="list-item" id="readBook"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <aside class="socmed-column">
+        <ul class="social-media">
+          <li>
+            <a href="https://www.instagram.com/ossastra/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+          <div class="vl"></div>
+          <li>
+            <a href="https://github.com/kyriten" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </li>
+          <div class="vl"></div>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/abimanyu-okysaputra/"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+        </ul>
+      </aside>
+    </main>
+    <!-- <script>
+      let nav = document.getElementById("js-menu");
+      let navToggle = document.getElementById("js-navbar-toggle");
+
+      navToggle.addEventListener("click", function () {
+        nav.classList.toggle("expand");
+      });
+    </script> -->
+
+    <script src="bookLoan.js"></script>
+
+    <script>
+      feather.replace();
+
+      document.querySelector(".nav-item").focus();
+    </script>
+  </body>
+</html>
