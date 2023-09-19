@@ -298,6 +298,260 @@ table {
   width: 100%;
 }
 
+.card {
+  width: 32%;
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+  height: fit-content;
+  border-radius: 10px;
+  display: block;
+  padding: 0 12px 12px;
+
+  color: #333;
+}
+
+.card span {
+  font-size: 15px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  display: block;
+  justify-content: space-around;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.card-footer {
+  height: 5vh;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px 0;
+}
+
+.ml-1 {
+  margin-left: 5px;
+}
+
+.mr-1 {
+  margin-right: 5px;
+}
+
+.ml-2 {
+  margin-left: 10px;
+}
+
+.mr-2 {
+  margin-right: 10px;
+}
+
+.mb-1 {
+  margin-bottom: 5px;
+}
+
+.mt-1 {
+  margin-top: 5px;
+}
+
+.mb-2 {
+  margin-bottom: 10px;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.mb-4 {
+  margin-bottom: 20px;
+}
+
+.mt-4 {
+  margin-top: 20px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-32 {
+  width: 32%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  width: 12.5%;
+  height: 4vh;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #3c83ba;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #68a5d4;
+  color: #ffffff;
+}
+
+/* Styling Forms */
+input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #3c83ba;
+  padding: 8px 10px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: gray;
+  font-weight: 700;
+  opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: gray;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: gray;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.ui-datepicker-calendar {
+  display: none;
+}
+
+.form-check {
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.form-check input,
+.form-check label {
+  cursor: pointer;
+}
+
+.item {
+  border-radius: 16px;
+  border: 2px solid #3c83ba;
+  margin-top: 16px;
+  padding: 0 24px 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+.item > .inner h2 {
+  margin-bottom: unset;
+}
+
+.item > .inner p {
+  margin-top: 0px;
+  color: #3c83ba;
+  font-weight: bold;
+}
+
+.check-button {
+  width: 40px;
+  height: 40px;
+
+  background: url("../assets/check-outline.svg");
+  background-size: contain;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.check-button:hover {
+  background: url("../assets/check-solid.svg");
+  background-size: contain;
+}
+
+.trash-button {
+  width: 40px;
+  height: 40px;
+
+  background: url("../assets/trash-outline.svg");
+  background-size: contain;
+  margin-left: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.trash-button:hover {
+  background: url("../assets/trash-fill.svg");
+  background-size: contain;
+}
+
+.undo-button {
+  width: 40px;
+  height: 40px;
+
+  background: url("../assets/undo-ouline.svg");
+  background-size: contain;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.undo-button:hover {
+  background: url("../assets/undo-ouline.svg");
+  background-size: contain;
+}
+
+.check-button:focus,
+.trash-button {
+  outline: none;
+}
+
 /*  ======================================
                 FOOTER SECTION            
     ======================================  */
@@ -380,6 +634,19 @@ footer {
     display: block;
     padding: 10px;
   }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .btn {
+    border: 0;
+    border-radius: 10px;
+    width: 50%;
+    height: 4vh;
+    font-weight: 500;
+    padding: 5px 10px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -421,5 +688,11 @@ footer {
 
   nav.navbar-mobile {
     display: none;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .btn {
+    height: 6vh;
   }
 }
