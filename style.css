@@ -283,6 +283,11 @@ span.creator-title {
   background-color: #d8d513;
 }
 
+.status-red {
+  color: #ffffff;
+  background-color: #d81313;
+}
+
 table {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -305,9 +310,9 @@ footer {
   color: #ddd;
 }
 
-/*  ======================================
-                RESPONSIVE SECTION            
-    ======================================  */
+/*  =========================================
+                RESPONSIVE SECTION                        
+    =========================================  */
 @media only screen and (max-width: 768px) {
   header {
     background-color: rgba(255, 255, 255, 0.664);
