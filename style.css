@@ -1,0 +1,420 @@
+/*  =========================================
+    Author 
+    - Name: Abimanyu Okysaputra Rachman 
+    - Github: github.com/kyriten
+    ========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Layouting */
+
+.container {
+  display: block;
+  width: 90%;
+  padding: 2rem;
+  margin-inline: auto;
+}
+
+.content {
+  flex: 3;
+  width: 80%;
+  padding: 20px;
+}
+
+.creator {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Logo */
+.logo img {
+  width: 35px;
+  user-select: none;
+}
+
+/*  ======================================
+                HEADER SECTION            
+    ======================================  */
+
+/* Web Nav */
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+header.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+  padding: 5px 0px;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: none;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: #298fc5;
+}
+
+.nav-links i {
+  margin-right: 5px;
+}
+
+.nav-menu li {
+  text-align: center;
+  margin: 15px auto;
+}
+
+/* Mobile Nav */
+.mobile-menu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.mobile-links {
+  text-decoration: none;
+  display: flex;
+  padding: 0px 16px;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.mobile-links span {
+  width: 0;
+  overflow: hidden;
+}
+
+.mobile-menu li {
+  display: block;
+  align-items: center;
+  text-align: center;
+}
+
+.mobile-links:focus {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: 0.2s;
+}
+
+.mobile-links:focus span {
+  width: 100%;
+  margin-left: 8px;
+  transition: 0.2s;
+}
+
+*:focus {
+  outline: none;
+  border: none;
+}
+
+nav.navbar-mobile {
+  position: sticky;
+  font-size: 19px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  z-index: 500;
+  background-color: #298fc5;
+}
+
+.mobile-links .fa {
+  margin-right: 5px;
+}
+
+/*  ============================================
+                    MAIN SECTION                
+    ============================================  */
+aside.socmed-column {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+  top: 30%;
+  right: 10%;
+}
+
+.social-media {
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.social-media li {
+  box-shadow: rgba(0, 0, 0, 0.5);
+}
+
+.social-media li a i {
+  background-color: #298fc5;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 50%;
+  width: 100%;
+  margin: 5px 0 5px 0;
+}
+
+.social-media li a i:hover {
+  background-color: #bdbdbd;
+}
+
+.vl {
+  border-left: 2px solid #298fc5;
+  border-radius: 5px;
+  text-align: center;
+  left: 50%;
+  height: 30px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+img.post-thumbnail {
+  height: 50%;
+  width: 25%;
+}
+
+article.post-with-desc {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.post {
+  margin-left: 25px;
+  padding-left: 20px;
+}
+
+.post-title {
+  font-size: 32px;
+}
+
+.tag {
+  display: inline-flex;
+  justify-content: flex-start;
+  background-color: #ddd;
+  color: #333;
+  font-size: 12px;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+span.creator-title {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 3px 10px;
+  color: #fff;
+  background-color: #298fc5;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.creator-detail {
+  margin-top: 26px;
+  display: block;
+  text-align: center;
+}
+
+.status {
+  letter-spacing: 2px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.status-green {
+  color: #fff;
+  background-color: #2aa711;
+}
+
+.status-orange {
+  color: #333;
+  background-color: #d8d513;
+}
+
+table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid #3333333b;
+  padding: 0px 5px 5px 5px;
+  width: 100%;
+}
+
+/*  ======================================
+                FOOTER SECTION            
+    ======================================  */
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 25px;
+  background-color: #333;
+  color: #ddd;
+}
+
+/*  ======================================
+                RESPONSIVE SECTION            
+    ======================================  */
+@media only screen and (max-width: 768px) {
+  header {
+    background-color: rgba(255, 255, 255, 0.664);
+    backdrop-filter: blur(10px);
+  }
+
+  nav.navbar-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .container {
+    display: block;
+    width: 100%;
+    padding: 0px 10px;
+  }
+
+  .content {
+    height: fit-content;
+    width: 100%;
+    padding: 10px;
+  }
+
+  aside.creator {
+    display: none;
+  }
+
+  .social-media {
+    display: none;
+  }
+
+  .post-with-desc img {
+    width: 50%;
+  }
+
+  article.post-with-desc {
+    align-items: center;
+    margin-top: 32px;
+    display: block;
+    padding: 10px;
+  }
+
+  img.post-thumbnail {
+    margin: auto;
+    display: block;
+  }
+
+  .post {
+    padding: 0px;
+    margin: 30px 0px;
+  }
+
+  footer {
+    margin-top: 58px;
+    position: relative;
+    bottom: 58px;
+    background: #333;
+    color: #fff;
+    width: 100%;
+  }
+
+  .creator {
+    display: block;
+    padding: 10px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    width: 80%;
+    padding: 2rem 4rem;
+    margin-inline: auto;
+  }
+  header.navbar {
+    font-size: 19px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    z-index: 500;
+  }
+
+  .nav-menu {
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu li {
+    display: inline;
+    padding-left: 35px;
+  }
+
+  .logo img {
+    width: 55px;
+    user-select: none;
+  }
+
+  .nav-links:hover {
+    color: #6ec0ec;
+  }
+
+  nav.navbar-mobile {
+    display: none;
+  }
+}
